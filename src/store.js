@@ -5,7 +5,7 @@ const DELETE = 'DELETE';
 
 const addTodo = text => ({ type: ADD, text});
 
-const deleteTodo = id => ({ type: DELETE, id });
+const deleteTodo = id => ({ type: DELETE, id: parseInt(id) });
 
 const reducer = (state = [], action) => {
     switch(action.type) {
