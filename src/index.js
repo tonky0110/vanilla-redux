@@ -4,25 +4,10 @@ const add = document.getElementById('add');
 const minus = document.getElementById('minus');
 const number = document.querySelector('span');
 
-const reducer = () => {};
+const countModifier = (count = 0) => {
+  return count;
+};
 
-const store = createStore(reducer);
+const countStore = createStore(countModifier);
 
-let count = 0;
-
-number.innerText = count;
-
-const updateText = () => {
-  number.innerText = count;
-}
-
-const handleAdd = () => {
-  count = count + 1;
-  updateText();
-}
-const handleMinus = () => {
-  count = count - 1;
-  updateText();
-}
-add.addEventListener('click', handleAdd);
-minus.addEventListener('click', handleMinus);
+console.log(countStore.getState());
