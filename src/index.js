@@ -11,15 +11,22 @@ const countModifier = (count = 0, action) => {
   } else if (action.type === 'MINUS') {
     console.log("Call action.type = 'MINUS'");
     return count - 1;
+  } else {
+    return count;
   }
-  return count;
 };
 
 const countStore = createStore(countModifier);
 
 countStore.dispatch({ type: "ADD" });
-
+countStore.dispatch({ type: "ADD" });
+countStore.dispatch({ type: "ADD" });
+countStore.dispatch({ type: "ADD" });
+countStore.dispatch({ type: "ADD" });
+countStore.dispatch({ type: "ADD" });
 console.log(countStore.getState());
+
+
 
 countStore.dispatch({ type: "MINUS" });
 
