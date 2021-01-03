@@ -16,12 +16,14 @@ const reducer = (state = [], action = {}) => {
   console.log(state, action);
   switch(action.type) {
     case ADD_TODO:
+      const newTodoObj = { text: action.text, id: Date.now() };
       return [
-        { text: action.text, id: Date.now() },
+        newTodoObj,
         ...state
       ];
     case DELETE_TODO:
-      return state.filter(todo => todo.id !== action.id);
+      const cleaned = state.filter(todo => todo.id !== action.id);
+      return cleaned;
     default:
       return state;
   }
