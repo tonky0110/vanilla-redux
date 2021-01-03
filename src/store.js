@@ -23,4 +23,9 @@ const store = createStore(reducer);
 
 // store.subscribe(); // react에서는 react-redux에서 처리해줌.
 
+export const actionCreators = {
+    addTodo,
+    deleteTodo
+};
+
 export default store;
