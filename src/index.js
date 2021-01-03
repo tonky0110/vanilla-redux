@@ -34,7 +34,7 @@ const dispatchAddToDo = (text) => {
 }
 
 const dispatchDeleteToDo = (e) => {
-  const id = e.target.parentNode.id;
+  const id = parseInt(e.target.parentNode.id);
   store.dispatch(deleteTodo(id));
 }
 
